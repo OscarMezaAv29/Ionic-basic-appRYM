@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>profile</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Atrás" defaultHref="userslist"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="character">
+    <ion-card class="ion-text-center">
+      <ion-card-content class="ion-text-center">
+        <img src="{{character['image']}}" alt="">
+        <ion-card-content>
+          <ion-card-title>
+            {{character['name']}}
+          </ion-card-title>
+          <ion-list>
+            <ion-item>
+              Estado: {{ translateStatusOrSpecies(character.status, 'status') }}
+            </ion-item>
+            <ion-item>
+              Especie: {{ translateStatusOrSpecies(character.species, 'species') }}
+            </ion-item>
+            <ion-item>
+              Género: {{ translateStatusOrSpecies(character.gender, 'gender') }}
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
